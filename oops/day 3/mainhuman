@@ -1,0 +1,14 @@
+import com.human;
+
+public class mainhuman {
+    public static void main(String[] args)
+    
+    {
+        human mani=new human(20,"mani",false);
+        human ram=new human(20,"ram",true);
+
+
+        mani.getpeopleinfo();
+        ram.getpeopleinfo();
+    }
+}
