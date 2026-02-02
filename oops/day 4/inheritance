@@ -1,1 +1,36 @@
+public class inheritance{
+    public static void main(String args[]){
+        
+        cat obj=new cat();
+        dog dog=new dog();
 
+        cat.eat();
+        dog.sleep();
+    }
+}
+
+class animal{
+
+    static void eat(){
+        System.out.println("yum yum");
+    }
+
+    static void sleep(){
+        System.out.println("Zzz..");
+    }
+
+}
+
+class cat extends animal{
+    
+    void meow(){
+        System.out.println("meoooww..");
+    }
+
+}
+
+class dog extends animal{
+    void bark(){
+        System.out.println("bow bow");
+    }
+}
