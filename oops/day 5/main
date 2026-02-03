@@ -1,1 +1,30 @@
 Todays code may be look tiny but the things i have learnt is worthy 
+public class main{
+    public static void main(String args[]){
+        c obj=new c();
+
+        System.out.println(obj.a);
+        System.out.println();
+    }
+}
+
+class a{
+    protected int a=5;
+
+    a(){
+    System.out.println("normal constructor");
+    }
+
+class b extends a{
+    int b=10;
+    b(){
+    System.out.println("it runn.. b class");
+    }
+}
+
+class c extends b{
+    int c=15;
+    c(){
+    System.out.println("it runn.. c class");
+    }
+}
