@@ -1,1 +1,38 @@
+//polymorphsim
+public class Main{
+    public static void main(String args[]){
+        circle circle=new circle();
+        square square=new square();
+        triangle tri =new triangle();
+        shapes shapes =new shapes();
 
+        circle.area();
+        tri.area();
+        square.area();
+        shapes.area();
+    }
+} 
+
+class shapes{
+    void area(int x){
+        System.out.println("shapes");
+    }
+}
+
+class circle extends shapes{
+    void area(double x){
+        System.out.println("circle");
+    }
+}
+
+class square extends shapes{
+    void area(int x,int y){
+        System.out.println("square");
+    }
+}
+
+class triangle extends shapes{
+    void area(int x,int y,int z){
+        System.out.println("triangle");
+    }
+}
