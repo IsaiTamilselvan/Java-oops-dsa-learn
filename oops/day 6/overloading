@@ -1,0 +1,25 @@
+public class overl{
+    public static void main(String args[]){
+
+        overl obj=new overl();
+
+        System.out.println(obj.sum(6,5));
+        System.out.println(obj.sum(6));
+        System.out.println(obj.sum(2,4,5));
+    }
+
+    int sum(int x,int y,int z){
+        System.out.println("3 parameter fun");
+        return x+y+z;
+    }
+
+    int sum(int x,int y){
+        System.out.println("2 parameter fun");
+        return x+y;
+    }
+
+    int sum(int x){
+        System.out.println("1 parameter fun");
+        return x;
+    }
+}
