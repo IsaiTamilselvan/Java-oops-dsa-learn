@@ -1,0 +1,33 @@
+// day 2 of clearing douts in polymorpshim
+//also final keywoard but i 
+//as well as override
+class school{
+    void rules(){
+        System.out.println("school rules");
+    }
+}
+class students extends school{
+    @Override
+    void rules(){
+        System.out.println("students rules");
+    }
+}
+class staff extends school{
+    @Override
+    void rules(){
+        System.out.println("staff rules");
+    }
+}
+
+public class polym{
+    public static void main(String args[]){
+
+        school obj1=new school();
+
+        staff obj2=new staff();
+        school obj3=new students();
+
+
+        obj3.rules();
+    }
+}
