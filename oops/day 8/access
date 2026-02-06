@@ -1,0 +1,30 @@
+class a{
+    private int num;
+    String name;
+    int[] arr;
+
+    public int getnum(){ //help us to 
+        return num;
+    }
+
+    public int getnum(int num){
+        this.num=num;
+    }
+
+    public a(int num,String name){
+        this.num=num;
+        this.name=name;
+        this.arr=new int[num];
+    }
+      
+}
+
+public class access{
+public static void main(String args[]){
+    a obj=new a();
+    //System.out.println(obj.num);
+}
+}
+
+//today class is so confusing so i cant keep my focus but learned something but i didnt code that well
+//i hope i will do my best in next class
