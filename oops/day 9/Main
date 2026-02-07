@@ -1,0 +1,19 @@
+
+class A{
+    private int num;//private so that it can only access inside this file 
+
+    int getter(){   //method i use to access the private variable
+        return num;
+    }
+
+    A(int num){ //i just ignored setter and created this constructor
+        this.num=num;
+    }
+}
+
+public class Main{
+    public static void main(String args[]){
+        A obj = new A(7);
+        System.out.println(obj.getter());
+    }
+}
