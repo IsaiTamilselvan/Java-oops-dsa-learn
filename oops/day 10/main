@@ -1,0 +1,44 @@
+//today i learned abstract class but very easily,i struggled in my day 8 class but i didnt 
+//give up my consistency so now ima in day 10 with better understandablity
+
+//i use abstract keyword becuse i used abstract methods over this class
+abstract class parent{
+    // abstract class declaration
+    abstract void career(); 
+    abstract void partner();
+}
+
+class son extends parent{
+    //because of abstract declaration we must override the method that are in super class
+    @Override
+    void career(){
+        System.out.println("iam a coder");
+    }
+    @Override
+    void partner(){
+        System.out.println("i love pooja hedge");
+    }
+}
+
+class daughter extends parent{
+    @Override
+    void career(){
+        System.out.println("iam a doctor");
+    }
+    @Override
+    void partner(){
+        System.out.println("i love thamiz selvan");//that is me !!
+    }
+}
+
+public class main{
+    public static void main(String args[]){
+        son son=new son();
+        son.career();
+        son.partner();
+
+        daughter daughter=new daughter();
+        daughter.career();
+        daughter.partner();
+    }
+}
