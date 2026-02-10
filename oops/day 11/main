@@ -1,0 +1,83 @@
+//here i used interface because we can use multiple inheritance with class 
+interface engine{
+//we must leave the body of methods empty like abstract
+    void start();
+    void stop();
+    void acc();
+
+}
+// brake interface
+interface brake{
+
+    void brake();
+    
+}
+// i just created a media player interface since i have not used its method so i commented the whole class
+
+interface mediaplayer{
+
+    void start();
+    void stop();
+    //pause();
+
+}
+//i created this class because of iam getting wrong output 
+// when i have to interface that 2 have methods having same name
+//but the intension of method are differint we can create a separate class and 
+//override the method and now we can create a obj yes because of we have class
+//call the method with obj
+class cdplayer implements mediaplayer{
+    //override start, stop with exact stuffs related to media
+    @Override
+    public void start(){
+        System.out.println("music playing...");
+    }
+    @Override
+    public void stop(){
+        System.out.println("music stoped..");
+    }
+}
+// i just created a class car because interface are not able to create a class
+// we achived multiple inheritance
+class car implements engine, brake, mediaplayer{
+
+//since we have not declared he method body we shoud  override the function and implement it
+    @Override
+    public void start(){
+        System.out.println("iam start like normal car");
+    }
+
+    @Override
+    public void stop(){
+        System.out.println("iam stop like normal car");
+    }
+
+    @Override
+    public void acc(){
+        System.out.println("iam acc like normal car");
+    }
+
+    @Override
+    public void brake(){
+        System.out.println("iam brake like normal car");
+    }
+
+}
+
+//main class i just named it as infc that means interface 
+//interface keyword cant be used so
+public class infc{
+    public static void main(String args[]){
+      /*  car vw = new car();
+        vw.start();
+        vw.stop();
+        vw.acc();
+        vw.brake();
+      */
+        //creating a mediaplayer onj
+        mediaplayer mp = new cdplayer();
+        mp.stop();
+    }
+}
+//i thik its my first code that reached 60+ lines
+//maybe i never noticed that it feel go look like growth to myself
