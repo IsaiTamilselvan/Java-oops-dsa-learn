@@ -1,0 +1,32 @@
+// extending interface
+
+interface a{
+    default void fun(){
+        System.out.println("hey iam in a");
+    }
+}
+
+// interface to class = implement
+// interface to interface = extends
+interface b {
+//    void fun();
+    void greet();
+}
+
+public class exinfc implements a, b{
+
+/*        @Override
+        public void fun(){
+            System.out.println("fun");
+        }
+*/      @Override
+        public void greet(){
+            System.out.println("greet");
+        }
+
+    public static void main(String[] args){
+
+        exinfc obj = new exinfc();
+        obj.fun();
+    }
+}
