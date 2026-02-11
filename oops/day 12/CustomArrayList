@@ -1,36 +1,48 @@
+// today i started to learn custom arraylist but iam get into many confusions 
+//so i just clerout my confusions first and here the code 
 
 
 public class CustomArrayList{
-
+    //just referance variable not an actual array
     private int[] data;
     private static int DEFAULT_SIZE =10;
     private int size = 0;
-
+    //constructor whic initialize the array
     public CustomArrayList(){
+        //i struggled lot her many my raise many question why how finaly i understood it
         this.data = new int[DEFAULT_SIZE];
     }
-
+    //add method
     public void add(int num){
+        //check array 
         if(isfull()){
+            //double the length of array if the array is full
             resize();
         }
+        //add nums initialy size is 0 each it increment 
         data[size++] = num;
         System.out.println(num+"added");
     }
-
+    //isfull checker
     private boolean isfull(){
         System.out.println("isfull func checked");
         return size == data.length;
     }
-
+    //resize method
     private void resize(){
+        //double the length of array
         int temp[] = new int[data.length * 2];
-
+        //copy all elements of data to temp
         for(int i = 0; i < data.length; i++){
             temp[i] = data[i];
         }
+        //again copy the temp to data becasue we only can able to use data variable
         data = temp;
         System.out.println("resize performed");
+    }
+
+    public int get(int index){
+        return data[index];
     }
 
     public static void main(String[] args){
@@ -49,5 +61,7 @@ public class CustomArrayList{
 
         list.add(11);
         list.add(12);
+
+        System.out.println(list.get(4));
     }
 }
