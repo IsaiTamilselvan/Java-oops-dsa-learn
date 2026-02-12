@@ -1,0 +1,79 @@
+//generics topic
+
+class genericslist<T>{
+    //just referance variable not an actual array
+    private Object[] data;
+    private static int DEFAULT_SIZE =10;
+    private int size = 0;
+    //constructor whic initialize the array
+    public genericslist(){
+        //i struggled lot her many my raise many question why how finaly i understood it
+        this.data = new Object[DEFAULT_SIZE];
+    }
+    //add method
+    public void add(T num){
+        //check array 
+        if(isfull()){
+            //double the length of array if the array is full
+            resize();
+        }
+        //add nums initialy size is 0 each it increment 
+        data[size++] = num;
+        System.out.println(num+"added");
+    }
+    //isfull checker
+    private boolean isfull(){
+        System.out.println("isfull func checked");
+        return size == data.length;
+    }
+    //resize method
+    private void resize(){
+        //double the length of array
+        Object temp[] = new Object[data.length * 2];
+        //copy all elements of data to temp
+        for(int i = 0; i < data.length; i++){
+            temp[i] = data[i];
+        }
+        //again copy the temp to data becasue we only can able to use data variable
+        data = temp;
+        System.out.println("resize performed");
+    }
+
+    public T get(int index){
+        return (T) data[index];
+    }
+
+    public int size(){
+        return size;
+    }
+
+    public void set(int index,T value){
+        this.data[index]=value;
+        System.out.println("value setted");
+    }
+
+}
+public class CustomArrayList{
+    public static void main(String[] args){
+        genericslist<String> list = new genericslist<>();
+
+        System.out.println(list.size());
+
+        list.add("tesla");
+        list.add("toyoto");
+        list.add("honda");
+        list.add("nissan");
+        list.add("mercedes-benz");
+        list.add("audi");
+        list.add("volkswagen");
+        list.add("kia");
+        list.add("jaguar");
+        list.add("volvo");
+
+        list.add("porsche");
+        list.add("lexus");
+
+        list.set(1,"bmw");
+        System.out.println(list.get(5));
+    }
+}
