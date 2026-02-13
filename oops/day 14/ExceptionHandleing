@@ -1,0 +1,17 @@
+public class ExceptionHandling{
+public static void main(String[] args){
+    int a = 4;
+    int b = 0;
+    //try to execute in this block
+    try{
+    System.out.println(a / b);
+    }catch (Exception e){  //it execute if the try block getting an error
+    // Exception e like Exception e = new exception(); what ever the referance variable is there
+    //execution does not depend on referance variable
+    //like some how i wrote ArithmeticException it doesnt affet the 
+        System.out.println(e.getMessage());
+    }finally {
+        System.out.println("run always");
+    }
+}
+}
