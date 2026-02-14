@@ -1,0 +1,16 @@
+class Enums{
+    enum week{
+        Monday, tuesday, wednesday, thursday, friday, saturday, sunday;
+
+    }
+}
+public static void main(String[] args){
+    week week;
+    week = week.monday;
+
+    for(week day : week.values()){
+        System.out.println(day);
+    }
+}
+today is very short class like only about 20 mins but i have learned much than the above code 
+  like collection how they inherited and so 
