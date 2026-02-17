@@ -1,0 +1,40 @@
+//revsion
+class student{
+    int roll;
+    float mark;
+    String name;
+    int ph;
+
+    student(int roll,float mark,String name){
+        this.roll=roll;
+        this.mark=mark;
+        this.name=name;
+    }
+//overloading
+    student(int roll,float mark,String name,int ph){
+        this.roll=roll;
+        this.mark=mark;
+        this.name=name;
+        this.ph=ph;
+    }
+    void changename(String newname){
+        this.name=newname;
+        System.out.println(newname+" name updated");
+    } 
+
+}
+
+public class students{
+    public static void main(String args[]){
+        student hari=new student(5,78.4f,"hari haran");
+        student tamil=new student(5,78.4f,"thamiz selvan",9783);
+
+        System.out.println(hari.roll);
+        System.out.println(hari.mark);
+        System.out.println(hari.name);
+
+        System.out.println(tamil.ph);
+
+        hari.changename("hariharamuthuraj");
+    }
+}
