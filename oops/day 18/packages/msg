@@ -1,0 +1,8 @@
+package packages.b;
+
+public class msg{
+
+    public static void mssg(){
+        System.out.println("cool from msg");
+    }
+}
