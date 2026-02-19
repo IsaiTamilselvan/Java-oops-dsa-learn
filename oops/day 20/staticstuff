@@ -1,0 +1,31 @@
+class human{
+    int age;
+    String name;
+    int salary;
+    boolean married;
+
+    //static is to mention that i is common to all
+    static long population;
+
+    human(int age,String name,int salary,boolean married){
+        this.age=age;
+        this.name=name;
+        this.salary=salary;
+        this.married=married;
+        //as this var is common to all in this class
+        //we just use the name of class instead of this
+        human.population += 1;
+
+    }
+}
+
+public class staticstuff {
+    public static void main(String[] args){
+        human thamiz = new human(22,"thamizselvan",100000,false);
+        human ierin = new human(26,"ierin",10000,true);
+
+
+        System.out.println(thamiz.population);
+        System.out.println(ierin.population);
+    }
+}
