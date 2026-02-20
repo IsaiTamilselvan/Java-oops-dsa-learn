@@ -1,0 +1,35 @@
+class human{
+// we cant use without static if it is non static 
+// we need instance to access
+    static void greeting(){
+        System.out.println("helloo");
+        //insiide static method we can only
+        //call static method
+    }
+
+    void hello(){
+        System.out.print("hi madam");
+    }
+
+    void propose(){
+        System.out.println("i like you");
+        greeting();
+        hello();//we can call both static and non static method
+        //inside a non static method
+        //for understanding 
+    }
+}
+
+public class stcp {
+    //main fun have static keyword because we dont need to creat a obj
+    public static void main(String[] args){
+
+        human.greeting();
+        //non static method only can be called in side static method
+        //as it was a method from human class we should call with human.greeting
+
+        //now call propose method via obj as it was a non static method
+        human obj=new human();
+        obj.propose();
+    }
+}
