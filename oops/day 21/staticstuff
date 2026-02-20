@@ -1,0 +1,44 @@
+//static stuff revision
+class human{
+    int age;
+    String name;
+    int salary;
+    boolean married;
+
+    //static is to mention that i is common to all
+    static long population;
+    //it did not depent on obj
+    //it can be access even before obj initialization
+
+    human(int age,String name,int salary,boolean married){
+        this.age=age;
+        this.name=name;
+        this.salary=salary;
+        this.married=married;
+        //as this var is common to all in this class
+        //we just use the name of class instead of this
+        human.population += 1;
+
+    }
+// we cant use without static if it is non static 
+// we need instance to access
+    static void greeting(){
+        System.out.println("helloo");
+    }
+}
+
+public class staticstuff {
+    //main fun have static keyword because we dont need to creat a obj
+    public static void main(String[] args){
+       // human thamiz = new human(22,"thamizselvan",100000,false);
+       // human ierin = new human(26,"ierin",10000,true);
+
+        human.greeting();//non static method only can be called in side static method
+//as it was a method from human class we should call with human.greeting
+
+
+        // System.out.println(thamiz.population);
+        // System.out.println(ierin.population);
+        System.out.println(human.population);//can be access without obj
+    }
+}
