@@ -1,0 +1,28 @@
+static and this keyword revision 
+
+class human {
+    int age;
+    String name;
+
+    static long population;
+
+    void msg(){
+        System.out.println("hello madam");
+        System.out.println(this.age);
+        //static method can use this keyword
+    }
+
+    public human(int age,String name){
+        this.age=age;
+        this.name=name;
+        human.population += 1;
+    }   
+}
+class main{
+    public static void main(String args[]){
+        human ierin=new human(21,"ierin");
+
+        ierin.msg();//we can use non static with referance
+        //msg();we cant use it directly
+    }
+}
