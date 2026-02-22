@@ -1,0 +1,33 @@
+//i named outerclaa as inner class
+//outside class cant be static 
+//i cant de static class innerclass
+public class innerclass{
+    //innerclass can be static
+    //like static class text
+
+//    String name;
+//
+//    innerclass(String name){
+//        this.name=name;
+//    }
+
+    static class test{
+
+        String name;
+
+         test(String name){
+              this.name=name;
+         }
+    }
+
+    public static void main(String[] args){
+
+        test a = new test("thamiz");
+        test b = new test("ierin");
+        //inner classes are non static by default
+        //so we have make the inner class static
+        System.out.println(a.name);
+        System.out.println(b.name);
+    }
+
+}
