@@ -1,0 +1,27 @@
+//singel ton class allows us to create only one class
+//constructor is not private here
+
+class singleton{
+    private singleton() {
+        System.out.print("");
+    }
+
+    private static singleton instance;
+
+    public static singleton getInstance(){
+        if(instance == null){
+            instance = new singleton();
+        }
+            return instance;
+    }
+
+
+}
+public class singletonn{
+public static void main(String args[]){
+    singleton obj = singleton.getInstance();
+    singleton obj1 = singleton.getInstance();
+
+    System.out.println(obj==obj1);
+}
+}
