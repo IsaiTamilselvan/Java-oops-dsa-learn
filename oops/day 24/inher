@@ -1,0 +1,26 @@
+//my fav topic revision
+class parent{
+    private int height=178;
+    private String color="white";
+
+    void gym(){
+        System.out.println("i own gym");
+    }
+}
+class child extends parent{
+    void doctor(){
+        System.out.println("iam a doctor");
+    }
+}
+public class inher{
+    public static void main(String args[]){
+        child obj =new child();
+
+        obj.gym();
+        obj.doctor();
+
+        parent obj2 = new parent();
+
+        obj2.gym();
+    }
+}
