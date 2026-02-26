@@ -1,0 +1,35 @@
+//polymorphism revision
+class shapes{
+    void area(){
+        System.out.println("iam a shape");
+    }
+}
+class circle extends shapes{
+    void area(){
+        System.out.println("area pi * r * r");
+    }
+}
+class triangle extends shapes{
+    void area(){
+        System.out.println("area is 0.5 * h * b");
+    }
+}
+class square extends shapes{
+    void area(){
+        System.out.println("area is 0.5 * h * b");
+    }
+}
+public class poly{
+    public static void main(String args[]){
+        shapes shap = new shapes();
+        shapes cir = new circle();
+        shapes tri = new triangle();
+        shapes sqr = new square();
+// referance var does not matter 
+//thats how our op is correctly match
+        shap.area();
+        sqr.area();
+        cir.area();
+        tri.area();
+    }
+}
