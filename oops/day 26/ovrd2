@@ -1,0 +1,22 @@
+// revision
+abstract class parent{
+    abstract void display();
+}
+class child extends parent{
+    @Override
+    void display(){
+        System.out.println("hello madam");
+    }
+}
+class child2 extends child{
+    @Override
+    void display(){
+       System.out.println("hello");
+    }
+}
+public class ovrd2{
+    public static void main(String[] args){
+        parent obj2=new child();
+        obj2.display();
+    }
+}
