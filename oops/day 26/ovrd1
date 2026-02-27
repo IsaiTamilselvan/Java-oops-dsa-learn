@@ -1,0 +1,29 @@
+//polymorphism revision
+
+//compile time polymosphism is overloading 
+//run time polymorphism is overriding 
+
+// these are the two type of polymosphism 
+//poly - many
+//morphism - way to represent
+class shape{
+    void display(){
+        System.out.println("hii madam");
+    }
+}
+class square extends shape{
+    //anotation
+    @Override //to represent that this method has been overriden
+    //just a comment like information
+    void display(){
+        System.out.println("hello madam");
+    }
+}
+public class ovrd1{
+    public static void main(String[] args){
+        shape obj1=new shape();
+        shape obj2=new square();
+        obj1.display();
+        obj2.display();
+    }
+}
