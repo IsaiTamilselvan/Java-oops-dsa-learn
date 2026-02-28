@@ -1,0 +1,25 @@
+class oon{
+//final method cant be overriden
+//final class cant be inherited
+
+    final int isaicute = 1;
+    void hello(){
+        System.out.println("hello");
+    }
+}
+//here i found that we can inherite the final class
+class obb extends oon{
+    @Override
+    void hello(){
+        System.out.println();
+    }
+}
+public class finall{
+    public static void main(String[] args){
+        obb obj=new obb();
+
+        obj.hello();
+        obb.isaicute = 0;
+        //final can not be reasign or replace another value
+    }
+}
