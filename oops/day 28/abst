@@ -1,0 +1,47 @@
+abstract class Car {
+    abstract void acceleration();
+    abstract void brake();
+    abstract void control();
+}
+
+class Brake extends Car {
+    @Override
+    void acceleration() {
+        System.out.println("No acceleration here");
+    }
+
+    @Override
+    void brake() {
+        System.out.println("Stopping");
+    }
+
+    @Override
+    void control() {
+        System.out.println("Controlling brake system");
+    }
+}
+
+class Engine extends Car {
+    @Override
+    void acceleration() {
+        System.out.println("Start moving");
+    }
+
+    @Override
+    void brake() {
+        System.out.println("Engine slowing down");
+    }
+
+    @Override
+    void control() {
+        System.out.println("Engine control system");
+    }
+}
+
+public class abst{
+    public static void main(String args[]) {
+        Car brek = new Brake();
+        brek.brake();
+        
+    }
+}
