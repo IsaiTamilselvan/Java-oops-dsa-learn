@@ -1,0 +1,20 @@
+//encapsulation revision
+class a{
+    private int balance = 100000;
+
+    //private means only inside the class 
+    //as this method is local to this class it can acces private
+    int getbalance(){
+        return balance;
+    }
+}
+public class encap{
+public static void main(String args[]){
+    a obj = new a();
+
+    //we cant directly acces the private variable
+    System.out.println(obj.balance);
+    //but we can access via method on that class
+    System.out.println(obj.getbalance());
+}
+}
