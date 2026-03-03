@@ -1,0 +1,15 @@
+class a{
+    protected int num = 5;
+}
+class b extends a{
+    public void disp(){
+    System.out.println(num);
+    }
+}
+public class acctrl2{
+    public static void main(String args[]){
+        a ob = new b();
+
+        ob.disp();
+    }
+}
