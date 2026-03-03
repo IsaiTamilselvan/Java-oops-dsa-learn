@@ -1,0 +1,30 @@
+//access control encapsulation
+class a{
+    private int num;
+    String name;
+    int[] arr;
+
+    public int getnum(){
+        return num;
+    }
+
+    public void setnum(int num){
+        this.num = num;
+    }
+
+    public a(int num,String name){
+        this.num = num;
+        this.name = name;
+        this.arr = new int[num];
+    }
+}
+public class acctrl{
+    public static void main(String args[]){
+        a obj = new a(1,"tamil");
+
+        System.out.println(obj.arr);
+        obj.setnum(5);
+        System.out.println(obj.getnum());
+        //we cant access private but via method it become achivable
+    }
+}
