@@ -1,0 +1,59 @@
+//interface revision
+interface engine{//interface is abstract by default
+
+    static final int price =70000;
+
+    public void start();
+    void stop();
+    void acc();
+
+    //void test(){
+    //    System.out.println("testt!!");
+    //}
+
+    //we cant declare body 
+
+}
+interface brake{
+
+    void brake();
+}
+
+class car implements engine,brake{
+    @Override
+    public void start(){
+        System.out.println("i start like normal car");
+    }
+    @Override
+    public void acc(){
+        System.out.println("i acc like normal car");
+    }
+    @Override
+    public void stop(){
+        System.out.println("i stop like normal car");
+    }
+    @Override
+    public void brake(){
+        System.out.println("i brake like normal car");
+    }
+}
+public class interfc{
+    public static void main(){
+
+        car car =new car();
+
+        car.start();
+        car.stop();
+        car.acc();
+        car.brake();
+
+// engine obj =new engine();//as the interface is already abstract 
+        //we cant create obj 
+        //if it has object we can access the method
+        //car.test();
+        //we cant do this too
+    }
+}
+
+//it seems like abstract class which has multi inheritance
+//yes its way to achive via interface and implement
