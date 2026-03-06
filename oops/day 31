@@ -1,0 +1,26 @@
+class studentclass{
+
+    int rollnumber;
+    String name;
+    float marks;
+
+    studentclass(int roll,String name,float marks){
+        this.name=name;
+        this.marks=marks;
+        this.rollnumber=roll;
+    } 
+
+    void displaydetails(){
+        System.out.println("Name"+this.name);
+        System.out.println("roll"+this.rollnumber);
+        System.out.println("marks"+this.marks);
+    }
+
+}
+public class student{
+    public static void main(String[] args){
+        studentclass obj = new studentclass(18,"tamil selvan",86f);
+
+        obj.displaydetails();
+    }
+}
