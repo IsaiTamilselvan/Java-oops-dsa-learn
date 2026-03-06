@@ -1,0 +1,35 @@
+class accountclass{
+    private int accountnumber;
+    private float balance= 0f;
+    int amount;
+
+    accountclass(int accno){
+        this.accountnumber=accno;
+    }
+    void withdraw(int amount){
+        System.out.println("rupees "+amount+" debited from account no: "+this.accountnumber);
+        this.balance -= amount;
+    }
+    void deposit(int amount){
+        System.out.println("rupees "+amount+" credited to account no: "+this.accountnumber);
+        this.balance += amount;
+    }
+    void getbalance(){
+        System.out.println("Your account balance"+this.balance);
+    }
+
+}
+public class bankaccount{
+    public static void main(String[] args){
+        accountclass obj = new accountclass(1234);
+
+            obj.deposit(5000);
+            obj.getbalance();
+            obj.deposit(6000);
+            obj.deposit(4000);
+            obj.deposit(500);
+
+            obj.getbalance();
+
+    }
+}
