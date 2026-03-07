@@ -1,0 +1,35 @@
+class student{
+    int roll;
+    String name;
+    float marks;
+
+    student(int roll,String name,float marks){
+        this.roll=roll;
+        this.marks=marks;
+        this.name=name;
+    }
+
+    public void displaydetails(){
+        System.out.println("Name:"+name);
+        System.out.println("roll:"+roll);
+        System.out.println("marks:"+marks);
+    }
+
+    public boolean ispass(){
+        if(40<=this.marks){
+            return true;
+        }
+        return false;
+    }
+}
+public class school{
+    public static void main(String[] args){
+        student tamil = new student(18,"isai tamil",39);
+        student ierin = new student(18,"ierin",86);
+
+        tamil.displaydetails();
+        tamil.ispass();
+        ierin.displaydetails();
+        ierin.ispass();
+    }
+}
