@@ -1,0 +1,24 @@
+class circle{
+    int r;
+    float pi = 3.14f;
+
+    circle(int r){
+        this.r=r;
+    }
+
+    public float area(){
+        return 2*(pi*r*r);
+    }
+
+    public float circumference(){
+        return 2*(pi*r);
+    }
+}
+public class cir{
+    public static void main(String args[]){
+        circle obj = new circle(6);
+
+        System.out.println(obj.area());
+        System.out.println(obj.circumference());
+    }
+}
