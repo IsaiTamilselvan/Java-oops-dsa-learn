@@ -1,0 +1,50 @@
+class mobile{
+    String brand;
+    int price;
+    int battery=0;
+
+    mobile(String brand,int price){
+        this.brand=brand;
+        this.price=price;
+    }
+
+    public void display(){
+        System.out.println("Brand: "+this.brand);
+        System.out.println("price: "+this.price);
+    }
+    public boolean isaffordable(){
+        return price<=20000;
+    }
+    public void chargebattery(){
+        if(battery<100){
+            battery += 10;
+        }else{
+            System.out.println(this.brand+" fully charged");
+        }
+    }
+}
+public class phone{
+    public static void main(String[] args){
+        mobile vivo = new mobile("Vivo y100",18000);
+        mobile iphone = new mobile("IPHONE 15",60000);
+
+        vivo.display();
+        System.out.println(vivo.isaffordable());
+        vivo.chargebattery();
+
+        iphone.display();
+        System.out.println(iphone.isaffordable());
+        iphone.chargebattery();
+
+        vivo.chargebattery();
+        vivo.chargebattery();
+        vivo.chargebattery();
+        vivo.chargebattery();
+        vivo.chargebattery();
+        vivo.chargebattery();
+        vivo.chargebattery();
+        vivo.chargebattery();
+        vivo.chargebattery();
+        vivo.chargebattery();
+    }
+}
