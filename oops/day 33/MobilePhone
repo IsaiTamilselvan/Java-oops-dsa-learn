@@ -1,0 +1,65 @@
+class MobilePhone{
+    String brand;
+    String model;
+    int charge = 0;
+    boolean ison = false;
+
+    MobilePhone(String brand,String model){
+        this.brand = brand;
+        this.model = model;
+    }
+    public void DisplayPhoneInfo(){
+        System.out.println("Brand "+this.brand);
+        System.out.println("Model "+this.model);
+    }
+    public void PowerOn(){
+        if(!ison){
+            System.out.println("screen is on");
+            System.out.println("notification: msg from ierin");
+            ison = true;
+        }else{
+            PowerOff();//like our phone single button on off
+        }
+    }
+    public void PowerOff(){
+        if(!ison){
+            PowerOn();
+        }else{
+            System.out.println("screen is off");
+            ison = false;
+        }
+    }
+    public void ChargeBattery(int amount){
+        if(100 >= amount && amount < charge){
+            charge += amount;
+        }else if(charge==100){
+            System.out.println("Fully charged");
+        }
+    }
+    public void UsePhone(int amount){
+        if(charge>0){
+            charge -= amount;
+        }else if(charge==0){
+            System.out.println("phone dead..");
+        }
+    }
+
+}
+public class Mobile{
+    public static void main(String args[]){
+        MobilePhone vivo = new MobilePhone("vivo","t2-5g");
+        vivo.PowerOn();
+        vivo.PowerOn();
+        vivo.PowerOff();
+        vivo.PowerOff();
+
+        vivo.ChargeBattery(100);
+        vivo.ChargeBattery(5);
+
+        vivo.UsePhone(100);
+        vivo.UsePhone(8);
+
+        vivo.DisplayPhoneInfo();
+
+}
+}
