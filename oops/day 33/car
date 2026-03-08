@@ -1,0 +1,49 @@
+class carclass{
+    String brand;
+    String model;
+    int year;
+
+    boolean power=false;
+    boolean off=true;
+
+    carclass(String brand,String model,int year){
+        this.brand=brand;
+        this.model=model;
+        this.year=year;
+    }
+
+    public void displaycarinfo(){
+        System.out.println("Brand "+this.brand);
+        System.out.println("Model "+this.model);
+        System.out.println("Year "+this.year);
+    }
+
+    public void startcar(){
+        if(!power){
+            System.out.println(this.brand+" car starting..");
+            power=true;
+        }else{
+        System.out.println("car already started");
+        }
+    }
+    public void stopcar(){
+        if(!power){
+            System.out.println("start the car first");
+        }else{
+        System.out.println(this.brand+" car is stoping");
+        power=false;
+        }
+    }
+}
+public class car{
+    public static void main(String args[]){
+        carclass bmw=new carclass("bmw","m4",2017);
+        carclass audi=new carclass("audi","r8",2018);
+
+        bmw.displaycarinfo();
+        bmw.startcar();
+        bmw.startcar();
+        bmw.stopcar();
+        bmw.stopcar();
+    }
+}
