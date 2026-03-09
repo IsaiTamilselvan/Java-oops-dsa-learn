@@ -1,0 +1,78 @@
+import java.util.*;
+class Laptop{
+    String brand;
+    int ram;
+    int storage;
+    boolean ison=false;
+
+
+    Laptop(String brand,int ram,int storage){
+        this.brand=brand;
+        this.ram=ram;
+        this.storage=storage;
+    }
+
+    public void powerOn(){
+        if(!ison){
+            System.out.println(this.brand+" screen is on ");
+            System.out.println("msg from ierin ");
+            ison=true;;
+        }else{
+            System.out.println(this.brand+" already on");
+        }
+    }
+    public void powerOff(){
+        if(!ison){
+            System.out.println(this.brand+" already off");
+        }else{
+            System.out.println(this.brand+" screen is off..");
+        }
+    }
+    public void upgradeRam(int gb){
+        if(gb>ram){
+            ram=gb;
+            System.out.println("ram upgraded");
+        }else{
+            System.out.println("cant upgrade");
+        }
+    }
+    public void displayLaptop(){
+        System.out.println("Brand: "+this.brand);
+        System.out.println("Ram: "+this.ram);
+        System.out.println("Storage: "+this.storage);
+    }
+}
+public class LaptopManagement{
+    public static void main(String[] args){
+        Scanner scan=new Scanner(System.in);
+        Laptop[] obj=new Laptop[3];
+
+        for(int i=0;i<3;i++){
+            System.out.println("enter brand:");
+            String brand=scan.nextLine();
+            System.out.println("enter ram:");
+            int ram=scan.nextInt();
+            System.out.println("enter storage:");
+            int storage=scan.nextInt();
+            scan.nextLine();
+            //-----------------------------------
+            obj[i]=new Laptop(brand,ram,storage);
+        }
+        //-------------------------------------------
+        obj[0].powerOn();
+        obj[1].powerOn();
+        obj[2].powerOn();
+
+        obj[0].powerOff();
+        obj[1].powerOff();
+        obj[2].powerOff();
+
+        obj[0].upgradeRam(16);
+        obj[1].upgradeRam(16);
+        obj[2].upgradeRam(16);
+
+        obj[0].displayLaptop();
+        obj[1].displayLaptop();
+        obj[2].displayLaptop();
+    }
+}
