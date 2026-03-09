@@ -1,0 +1,74 @@
+import java.util.Scanner;
+class Mobile{
+    String brand;
+    int price;
+    int stock;
+
+    Mobile(String brand,int price,int stock){
+        this.brand=brand;
+        this.price=price;
+        this.stock=stock;
+    }
+    public void sellPhone(int quantity){
+        if(quantity<=this.stock){
+        this.stock -= quantity;
+        System.out.println(this.brand+" available stock: "+this.stock);
+        }else{
+            System.out.println(this.brand+" available stock: "+this.stock);
+        }
+    }
+    public void reStock(int quantity){
+        if(quantity>0){
+            this.stock += quantity;
+            System.out.println(this.brand+" available stock: "+this.stock);
+        }
+    }
+    public void displayPhone(){
+        System.out.println("Brand: "+this.brand);
+        System.out.println("Price: "+this.price);
+    }
+}
+public class Mobileshop{
+    public static void main(String args[]){
+        Scanner scan = new Scanner(System.in);
+        Mobile[] obj=new Mobile[4];
+
+        for(int i=0;i<4;i++){
+            System.out.println("enter brand:");
+            String brand=scan.nextLine();
+            System.out.println("enter price:");
+            int price=scan.nextInt();
+            System.out.println("enter stock:");
+            int stock=scan.nextInt();
+            scan.nextLine();
+
+            obj[i] = new Mobile(brand,price,stock);
+        }
+//user input--------------------------------------shop
+        
+//choice----------------------------------------------
+        System.out.println("select mobile indec 1-3");
+        int index = scan.nextInt();
+        System.out.println("1.sell phone");
+        System.out.println("1.restock");
+
+        System.out.println("Enter choice:");
+        int ch = scan.nextInt();
+        switch(ch){
+            case 1:
+                System.out.println("enter quantity");
+                int quantity = scan.nextInt();
+                obj[index].sellPhone(quantity);
+                break;
+            case 2:
+                System.out.println("enter stock");
+                quantity = scan.nextInt();
+                obj[index].reStock(quantity);
+                break;
+            default:
+                System.out.println("invaild choice");
+                break;
+
+        }
+    }
+}
