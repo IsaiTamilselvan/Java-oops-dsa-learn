@@ -1,0 +1,102 @@
+import java.util.*;
+class BankAccount{
+    String accholder;
+    int accno;
+    private float balance = 0f;
+    boolean isactive;
+
+    BankAccount(String accholder,int accno){
+        this.accholder=accholder;
+        this.accno=accno;
+    }
+
+    public void deposit(int amount){
+        if(isactive){
+        if(amount>0){
+            this.balance += amount;
+            System.out.println("rs: "+amount+" credited");
+            System.out.println("available balance rs: "+this.balance);
+        }else{
+            System.out.println("negative exception");
+        }
+    }
+    }
+    public void withdraw(int amount){
+        if(isactive){
+        if(amount<=balance){
+            this.balance -= amount;
+            System.out.println("rs: "+amount+" debited");
+            System.out.println("Available balance:rs "+this.balance);
+        }
+    }
+    }
+    public void Display(){
+        System.out.println("Account holder: "+this.accholder);
+        System.out.println("Account number: "+this.accno);
+    }
+    void activateAcc(){
+        isactive=true;
+    }
+    void deactivateacc(){
+        isactive=false;
+    }
+}
+public class AtmSystem{
+    public static void main(String args[]){
+        Scanner scan=new Scanner(System.in);
+        BankAccount[] obj=new BankAccount[3];
+        boolean run=true;
+
+        //create 3 account ---------------------
+            for(int i=0;i<3;i++){
+                System.out.println("Enter account holder name:");
+                String accholder=scan.nextLine();
+                System.out.println("Enter account number:");
+                int accno=scan.nextInt();
+                scan.nextLine();
+
+                obj[i] = new BankAccount(accholder,accno);
+            }
+
+        while(run){
+            System.out.println("select account (0-2)");
+            int index=scan.nextInt();
+            //menu-----------------------------------
+            System.out.println("1.Deposit");
+            System.out.println("2.withdraw");
+            System.out.println("3.activate");
+            System.out.println("4.Deactivate");
+            System.out.println("5.Display");
+            System.out.println("6.Exit");
+
+            System.out.println("choose the one");
+            int ch=scan.nextInt();
+
+            //take action to menu--------------------
+            switch(ch){
+                case 1:
+                    System.out.println("Enter amount");
+                    int amount=scan.nextInt();
+                    obj[index].deposit(amount);
+                    break;
+                case 2:
+                    System.out.println("Enter amount");
+                    amount=scan.nextInt();
+                    obj[index].withdraw(amount);
+                    break;
+                case 3:
+                    obj[index].activateAcc();
+                    break;
+                case 4:
+                    obj[index].deactivateacc();
+                    break;
+                case 5:
+                    obj[index].Display();
+                    break;
+                default:
+                    run=false;
+            }
+
+        }
+    }
+}
