@@ -1,0 +1,47 @@
+class Song{
+    String title;
+    String artist;
+    int duration;
+    boolean isplaying;
+    
+    Song(String title,String artist,int duration){
+        this.title=title;
+        this.artist=artist;
+        this.duration=duration;
+    }
+    public void play(){
+        if(!isplaying){
+            System.out.println("playing: "+this.title);
+            isplaying=true;
+        }
+        else{
+            System.out.println("song already playing");
+        }
+    }
+    public void pause(){
+        if(!isplaying){
+            System.out.println("song already paused");
+        }
+        else{
+            System.out.println("song paused");
+            isplaying=false;
+        }
+    }
+    public void display(){
+        System.out.println("Title: "+this.title);
+        System.out.println("Artist: "+this.artist);
+        System.out.println("Duration: "+this.duration);
+    }
+}
+public class Songplayer{
+    public static void main(String args[]){
+        Song s1=new Song("asa koda","sai",2);
+        Song s2=new Song("katchi sera","sai",3);
+
+        s1.pause();
+        s2.play();
+
+        s1.display();
+        s2.display();
+    }
+}
