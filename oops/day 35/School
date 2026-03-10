@@ -1,0 +1,99 @@
+import java.util.*;
+class Student{
+    String name;
+    int rollno;
+    float marks;
+
+    Student(String name,int rollno,float marks){
+        this.name=name;
+        this.rollno=rollno;
+        this.marks=marks;
+    }
+    public void displayStudent(){
+        System.out.println("Name: "+this.name);
+        System.out.println("Rollno: "+this.rollno);
+        System.out.println("Marks: "+this.marks);
+    }
+    public void updateMarks(int newmarks){
+        if(newmarks<=100){
+            this.marks=newmarks;
+        }
+    }
+    public boolean ispass(){
+        return this.marks>=40;
+    }
+}
+public class School{
+    public static void main(String args[]){
+        Scanner scan = new Scanner(System.in);
+        Student[] arr = new Student[5];
+
+        //get students-----------------------------------
+        for(int i=0;i<5;i++){
+            System.out.println("enter student name:");
+            String name=scan.nextLine();
+            System.out.println("enter student rollno:");
+            int rollno=scan.nextInt();
+            System.out.println("enter student makrs:");
+            int marks=scan.nextInt();
+            scan.nextLine();
+            //obj with i------------------------------
+            arr[i] = new Student(name,rollno,marks);
+        }
+        boolean run=true;
+        while(run){
+            //select student---------------------------
+            //System.out.println("select student 0-4");
+            //int index=scan.nextInt();
+            //menu------------------------------------
+            System.out.println("1 Display all students");
+            System.out.println("2 Update marks by roll number");
+            System.out.println("3 Find student by roll number");
+            System.out.println("4 Show only passed students");
+            System.out.println("5 Exit");
+            //choice----------------------------------
+            System.out.println("enter choice 1-5");
+            int ch=scan.nextInt();
+
+            switch(ch){
+                case 1:
+                    for(int i=0;i<5;i++){
+                        arr[i].displayStudent();
+                        System.out.println("------------------------------------------------");
+                    }
+                    break;
+                case 2:
+                    System.out.println("enter rollno:");
+                    int searchrno=scan.nextInt();
+                    for(int i=0;i<5;i++){
+                        if(arr[i].rollno==searchrno){
+                            System.out.println("enter new marks:");
+                            int newmarks=scan.nextInt();
+                            arr[i].marks=newmarks;
+                        }
+                    }
+                    break;
+                case 3:
+                    System.out.println("enter rollno:");
+                    searchrno=scan.nextInt();
+                    for(int i=0;i<5;i++){
+                        if(arr[i].rollno==searchrno){
+                            System.out.println(arr[i].name);
+                        }
+                    }
+                    break;
+                case 4:
+                    for(int i=0;i<5;i++){
+                        if(arr[i].ispass()){
+                            System.out.println(arr[i].name);
+                        }
+                    }
+                    break;
+                default:
+                    run =false;
+            }
+            
+        }
+
+    }
+}
