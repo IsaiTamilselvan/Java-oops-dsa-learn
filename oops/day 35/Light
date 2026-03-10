@@ -1,0 +1,75 @@
+class SmartLight{
+    String roomname;
+    int brightness;
+    boolean ison;
+
+    SmartLight(String roomname){
+        this.roomname=roomname;
+        this.brightness=40;
+    }
+    
+
+    public void turnOn(){
+        if(!ison){
+            System.out.println("Light in "+this.roomname+"turned on");
+            ison=true;
+        }else{
+            System.out.println("Light already on");
+        }
+    }
+    public void turnOff(){
+        if(!ison){
+            System.out.println("Light already off");
+        }else{
+            System.out.println("Light in "+this.roomname+" turned off");
+            ison=false;
+        }
+    }
+    public void increaseBrightness(int amount){
+    if(!ison){
+        System.out.println("Light is OFF");
+        return;
+    }
+
+    if(brightness + amount > 100){
+        brightness = 100;
+        System.out.println("Maximum brightness reached");
+    } else {
+        brightness += amount;
+        System.out.println("Brightness increased to " + brightness);
+    }
+    }
+    public void decreaseBrightness(int amount){
+    if(!ison){
+        System.out.println("Light is OFF");
+        return;
+    }
+
+    if(brightness - amount < 0){
+        brightness = 0;
+        System.out.println("Minimum brightness reached");
+    } else {
+        brightness -= amount;
+        System.out.println("Brightness decreased to " + brightness);
+    }
+}
+    public void displayStatus(){
+        System.out.println("RoomName: "+this.roomname);
+        System.out.println("Brightness: "+this.brightness+"%");
+        System.out.println("Ison: "+this.ison);
+    }
+}
+public class Light{
+    public static void main(String args[]){
+        SmartLight lit=new SmartLight("a");
+
+        lit.turnOn();
+        lit.turnOff();
+        lit.turnOn();
+
+        lit.increaseBrightness(60);
+        lit.decreaseBrightness(30);
+
+        lit.displayStatus();
+    }
+}
