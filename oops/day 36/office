@@ -1,0 +1,34 @@
+class Employee{
+    String name;
+    String role;
+    int salary;
+    static int totalEmployee;
+
+    Employee(String name,String role,int salary){
+        this.name=name;
+        this.role=role;
+        this.salary=salary;
+        totalEmployee++;
+    }
+    public void displayEmployee(){
+        System.out.println("Name: "+this.name);
+        System.out.println("Role: "+this.role);
+        System.out.println("Salary: "+this.salary);
+    }
+    public static void displayTotalEmployee(){
+        System.out.println("Total Employee: "+totalEmployee);
+    }
+}
+public class Office{
+    public static void main(String[] args){
+        Employee emp=new Employee("tamil","software developer",100000);
+        Employee emp2=new Employee("ierin","software developer",75000);
+        Employee emp3=new Employee("karthika","software developer",50000);
+
+        emp.displayEmployee();
+        emp2.displayEmployee();
+        emp3.displayEmployee();
+
+        Employee.displayTotalEmployee();
+    }
+}
