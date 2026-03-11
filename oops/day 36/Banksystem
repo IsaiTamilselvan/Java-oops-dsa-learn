@@ -1,0 +1,40 @@
+class BankAccount{
+
+    String name;
+    private float balance;
+    static float intrestrate = 5f;
+
+    BankAccount(String name){
+        this.name=name;
+    }
+
+    public void deposit(int amount){
+        if(amount>0){
+            this.balance += amount;
+        }else{
+            System.out.println("unable to dispance");
+        }
+    }
+
+    public void displayAccount(){
+        System.out.println("Name: "+this.name);
+        System.out.println("Balance: "+this.balance);
+    }
+
+    public void calculateIntrest(){
+        float Intrest = balance * intrestrate / 100;
+        System.out.println("Intrest amount: "+Intrest);
+    }
+}
+public class BankSystem{
+    public static void main(String[] args){
+        BankAccount acc1 = new BankAccount("tamil");
+
+        acc1.displayAccount();
+        acc1.deposit(54630000);
+        acc1.calculateIntrest();
+        acc1.displayAccount();
+
+
+    }
+}
