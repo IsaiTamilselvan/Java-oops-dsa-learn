@@ -1,0 +1,47 @@
+class Candidate{
+    String name;
+    String party;
+    private int votes;
+    static int totalVotes;
+
+    Candidate(String name,String party){
+        this.name=name;
+        this.party=party;
+        this.votes = 0;
+    }
+    public void castVote(){
+        this.votes++;
+        Candidate.totalVotes++;
+
+        System.out.println("Vote cate for: "+this.name);
+    }
+    public void displayCandidate(){
+        System.out.println("Name: "+this.name);
+        System.out.println("Party: "+this.party);
+        System.out.println("Votes: "+this.votes);
+    }
+    public static void displayTotalVotes(){
+        System.out.println("Total votes: "+Candidate.totalVotes);
+    }
+
+}
+public class VotingSystem{
+    public static void main(String args[]){
+        Candidate c1 = new Candidate("Ravi","ABC");
+        Candidate c2 = new Candidate("Arun","XYZ");
+        Candidate c3 = new Candidate("Kumar","DEF");
+
+        c1.castVote();
+        c1.castVote();
+        c2.castVote();
+        c3.castVote();
+        c3.castVote();
+
+        c1.displayCandidate();
+        c2.displayCandidate();
+        c3.displayCandidate();
+
+        Candidate.displayTotalVotes();
+
+    }
+}
