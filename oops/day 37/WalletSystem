@@ -1,0 +1,90 @@
+import java.util.*;
+class Wallet{
+    String ownerName;
+    private float balance;
+    static int totalTransaction;
+
+    Wallet(String ownerName){
+        this.ownerName=ownerName;
+    }
+
+    public void addMoney(float amount){
+        if(amount>0){
+            this.balance += amount;
+            totalTransaction++;
+            System.out.println("Rs: "+amount+" credited to your account");
+        }else{
+            System.out.println("Negative exception");
+        }
+    }
+
+    public void spendMoney(float amount){
+        if(amount<balance){
+            this.balance -= amount;
+            totalTransaction++;
+            System.out.println("Rs: "+amount+" debited from your account");
+        }else{
+            System.out.println("Insufficent bank balance,check ur balance");
+        }
+    }
+
+    public void checkBalance(){
+        System.out.println("Balnace: "+this.balance);
+    }
+
+    public void displayWallet(){
+        System.out.println("Account Holder Name: "+this.ownerName);
+        System.out.println("Available Balance: "+this.balance);
+    }
+
+    public static void displatotalTransaction(){
+        System.out.println("Total Transaction :"+totalTransaction);
+    }
+}
+public class WalletSystem{
+    public static void main(String args[]){
+        Scanner sn=new Scanner(System.in);
+        Wallet[] acc1=new Wallet[3];
+
+        for(int i=0;i<3;i++){
+            System.out.println("Enter Account Holder Name: ");
+            String name=sn.nextLine();
+            acc1[i] = new Wallet(name);
+        }
+        boolean run=true;
+        while(run){
+            System.out.println("Select account(0-2):");
+            int index = sn.nextInt();
+
+            System.out.println("1.Addmoney:");
+            System.out.println("2.Spendmoney:");
+            System.out.println("3.Checkbalance:");
+            System.out.println("4.DisplayWallet:");
+
+            System.out.println("Enter your choice:");
+            int ch=sn.nextInt();
+
+            switch(ch){
+                case 1:
+                    System.out.println("Enter amount to deposit:");
+                    int amount = sn.nextInt();
+                    acc1[index].addMoney(amount);
+                    break;
+                case 2:
+                    System.out.println("Enter amount to spend:");
+                    amount = sn.nextInt();
+                    acc1[index].spendMoney(amount);
+                    break;
+                case 3:
+                    acc1[index].checkBalance();
+                    break;
+                case 4:
+                    acc1[index].displayWallet();
+                    break;
+                default:
+                    run=false;
+                    break;
+            }   
+        }
+    }
+}
