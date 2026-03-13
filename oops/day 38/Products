@@ -1,0 +1,36 @@
+class Device{
+    String brand;
+    int price;
+
+    Device(String brand,int price){
+        this.brand=brand;
+        this.price=price;
+    }
+
+    public void displayDevice(){
+        System.out.println("--------Device Information-------");
+        System.out.println("Brand Name: "+this.brand);
+        System.out.println("Device price: "+this.price);
+        System.out.println("_________________________________");
+    }
+}
+class Phone extends Device{
+    int batteryLevel;
+
+    Phone(String brand,int price,int batteryLevel){
+        super(brand, price);
+        this.batteryLevel=batteryLevel;
+    }
+
+    public void showCharge(){
+        System.out.println("charge: "+this.batteryLevel+" %");
+    }
+}
+class Products{
+    public static void main(String args[]){
+        Phone ph=new Phone("vivo",200000,80);
+        
+        ph.displayDevice();
+        ph.showCharge();
+    }
+}
