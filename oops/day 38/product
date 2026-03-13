@@ -1,0 +1,45 @@
+class device{
+    String brand;
+    int price;
+
+    
+
+    public void displayDevice(){
+        System.out.println("--------Device Information-------");
+        System.out.println("Brand Name: "+this.brand);
+        System.out.println("Device price: "+this.price);
+        System.out.println("_________________________________");
+    }
+}
+class phone extends device{
+    int batteryLevel;
+
+    public void makeCall(){
+        System.out.println("Calling...");
+    }
+}
+class laptop extends device{
+    int ram;
+    
+    public void runProgram(){
+        System.out.println("Opening Application");
+    }
+}
+class product{
+    public static void main(String args[]){
+        phone ph=new phone();
+        laptop lap=new laptop();
+
+        ph.brand="vivo";
+        ph.price=20000;
+        ph.batteryLevel=50;
+
+        ph.displayDevice();
+
+        lap.brand="acer";
+        lap.price=25000;
+        lap.ram=80;
+
+        lap.displayDevice();
+    }
+}
