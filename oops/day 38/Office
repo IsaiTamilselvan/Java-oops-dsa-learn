@@ -1,0 +1,42 @@
+class Employee{
+    String Name;
+    int Salary;
+
+    Employee(String Name,int Salary){
+        this.Name=Name;
+        this.Salary=Salary;
+    }
+
+    public void work(){
+        System.out.println("Work process...");
+    }
+}
+class Developer extends Employee{
+    Developer(String Name,int Salary){
+        super(Name,Salary);
+    }
+
+    @Override
+    public void work(){
+        System.out.println("Developer: "+this.Name+" Writing Java Code..");
+    }
+}
+class Manager extends Employee{
+    Manager(String Name,int Salary){
+        super(Name,Salary);
+    }
+
+    @Override
+    public void work(){
+        System.out.println("Manager: "+this.Name+" managing team");
+    }
+}
+public class Office{
+    public static void main(String args[]){
+        Developer dev = new Developer("tamil",100000);
+        Manager mgr = new Manager("ierin",150000);
+
+        dev.work();
+        mgr.work();
+    }
+}
