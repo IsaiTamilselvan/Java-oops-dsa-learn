@@ -1,0 +1,29 @@
+class Vehicle{
+    String brand;
+    int speed;
+
+    public void start(){
+        System.out.println("starting.......");
+    }
+}
+class bike extends Vehicle{
+    @Override
+    public void start(){
+        System.out.println("bike is starting........");
+    }
+}
+class car extends Vehicle{
+    @Override
+    public void start(){
+        System.out.println("car is starting........");
+    }
+}
+public class Drives{
+    public static void main(String args[]){
+        car audi=new car();
+        bike ktm=new bike();
+
+        audi.start();
+        ktm.start();
+    }
+}
