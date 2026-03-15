@@ -1,0 +1,34 @@
+abstract class Shape{
+    abstract void area();
+}
+class Circle extends Shape{
+    @Override
+    void area(){
+        System.out.println("circle area caluculating..");
+    }
+}
+class Rectangle extends Shape{
+    @Override
+    void area(){
+        System.out.println("Rectangle area caluculating..");
+    }
+}
+class Square extends Shape{
+    @Override
+    void area(){
+        System.out.println("Square area caluculating..");
+    }
+}
+
+public class Absshapes{
+    public static void main(String args[]){
+        Shape[] sp = new Shape[3];
+            sp[0] = new Circle();
+            sp[1] = new Rectangle();
+            sp[2] = new Square();
+
+        for(int i=0;i<3;i++){
+            sp[i].area();
+       }
+    }
+}
