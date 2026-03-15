@@ -1,0 +1,34 @@
+abstract class Notification{
+    abstract void sent();
+}
+class Email extends Notification{
+    @Override
+    void sent(){
+        System.out.println("Email Notification");
+    }
+}
+class Sms extends Notification{
+    @Override
+    void sent(){
+        System.out.println("Sms Notification");
+    }
+}
+class Push extends Notification{
+    @Override
+    void sent(){
+        System.out.println("Push Notification");
+    }
+}
+public class Noti{
+    public static void main(String args[]){
+        Notification[] noti =new Notification[3];
+
+        noti[0] = new Email();
+        noti[1] = new Sms();
+        noti[2] = new Push();
+
+        for(int i=0;i<3;i++){
+            noti[i].sent();
+        }
+    } 
+}
