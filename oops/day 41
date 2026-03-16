@@ -1,0 +1,32 @@
+interface Playable{
+    public void play();
+}
+class Podcast implements Playable{
+    public void play(){
+        System.out.println("playing podcast");
+    }
+}
+class Song implements Playable{
+    public void play(){
+        System.out.println("playing song");
+    }
+}
+class video implements Playable{
+    public void play(){
+        System.out.println("playing video");
+    }
+}
+public class Ipad{
+    public static void main(String argsp[]){
+        Playable[] plays = new Playable[3];
+
+        plays[0]=new Podcast();
+        plays[1]=new Song();
+        plays[2]=new video();
+
+        for(int i=0;i<3;i++){
+            plays[i].play();
+        }
+        
+    }
+}
