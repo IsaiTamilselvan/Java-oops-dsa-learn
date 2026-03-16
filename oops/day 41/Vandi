@@ -1,0 +1,48 @@
+interface Driveable{
+    public void drive();
+}
+class Vehicle{
+    String brand;
+    int price;
+
+    Vehicle(String brand,int price){
+        this.brand=brand;
+        this.price=price;
+    }
+
+    public void displayVehicle(){
+        System.out.println("Brand: "+this.brand);
+        System.out.println("Price: "+this.price);
+    }
+}
+class Car extends Vehicle implements Driveable{
+    Car(String brand,int price){
+        super(brand,price);
+    }
+    @Override
+    public void drive(){
+    System.out.println("Car is driving...");
+    }
+}
+class Bike extends Vehicle implements Driveable{
+    Bike(String brand,int price){
+        super(brand,price);
+    }
+    @Override
+    public void drive(){
+    System.out.println("Bike is driving...");
+    }
+}
+public class Vandi{
+    public static void main(String args[]){
+        Vehicle[] vh = new Vehicle[2];
+
+        vh[0]=new Car("bmw",5000000);
+        vh[1]=new Bike("yamaha",200000);
+
+        for(int i=0;i<2;i++){
+            vh[i].displayVehicle();
+            ((Driveable)vh[i]).drive();
+        }
+    }
+}
