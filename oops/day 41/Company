@@ -1,0 +1,35 @@
+interface Worker{
+    public void doWork();
+}
+class Programmer implements Worker{
+    @Override
+    public void doWork(){
+        System.out.println("Writing Java");
+    }
+}
+class Designer implements Worker{
+    @Override
+    public void doWork(){
+        System.out.println("Designing System");
+    }
+}
+class Tester implements Worker{
+    @Override
+    public void doWork(){
+        System.out.println("Testing Project");
+    }
+}
+public class Company{
+    public void main(String args[]){
+        Worker[] emp = new Worker[3];
+
+        emp[0]=new Programmer();
+        emp[1]=new Designer();
+        emp[2]=new Tester();
+
+        for(int i=0;i<3;i++){
+            emp[i].doWork();
+        }
+
+    }
+}
