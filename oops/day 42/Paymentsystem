@@ -1,0 +1,73 @@
+abstract class Payment{
+    private int amount;
+
+    Payment(int amount){
+        this.amount=amount;
+    }
+
+    abstract void pay();
+
+    public void showAmount(){
+        System.out.println("Amount: "+this.amount);
+    }
+}
+interface Refundable{
+    public void reFund();
+}
+class Upi extends Payment implements Refundable{
+
+    Upi(int amount){
+        super(amount);
+    }
+    @Override
+    void pay(){
+        System.out.println("Pay with upi");
+    }
+    @Override
+    public void reFund(){
+            System.out.println("Refund via upi");
+    } 
+}
+class Card extends Payment implements Refundable{
+
+    Card(int amount){
+        super(amount);
+    }
+    @Override
+    void pay(){
+        System.out.println("Pay to Card");
+    }
+    @Override
+    public void reFund(){
+            System.out.println("Refund with Card");
+    }
+}
+class Wallet extends Payment implements Refundable{
+
+    Wallet(int amount){
+        super(amount);
+    }
+    @Override
+    void pay(){
+        System.out.println("Pay with wallet");
+    }
+    @Override
+    public void reFund(){
+            System.out.println("Refund via wallet");
+    }
+}
+public class Paymentsystem{
+    public static void main(String args[]){
+        Payment[] py = new Payment[3];
+
+        py[0]=new Upi(5000);
+        py[1]=new Card(4000);
+        py[2]=new Wallet(3000);
+
+        for(int i=0;i<3;i++){
+            py[i].pay();
+            py[i].showAmount();
+          ((Refundable)py[i]).reFund();
+        }
+    }
+}
