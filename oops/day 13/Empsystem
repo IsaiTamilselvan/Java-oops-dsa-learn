@@ -1,0 +1,57 @@
+abstract class Employee{
+    String name;
+    int id;
+
+    Employee(String name,int id){
+        this.name=name;
+        this.id=id;
+    }
+
+    abstract void calculateSalary();
+}
+interface Bonuseligible{
+    public void applyBonus();
+}
+class Developer extends Employee implements Bonuseligible{
+
+    Developer(String name,int id){
+        super(name,id);
+    }
+    @Override
+    void calculateSalary(){
+        System.out.println("Developer Salary ");
+    }
+    @Override
+    public void applyBonus(){
+        System.out.println("not eligible");
+    }
+}
+class Manager extends Employee implements Bonuseligible{
+
+    Manager(String name,int id){
+        super(name,id);
+    }
+    @Override
+    void calculateSalary(){
+        System.out.println("Manager Salary");
+    }
+
+    @Override
+    public void applyBonus(){
+        System.out.println("bonus applied");
+    }
+}
+public class Empsystem{
+    public static void main(String args[]){
+        Employee[] emp = new Employee[3];
+
+        emp[0]=new Developer("mani",403);
+        emp[1]=new Manager("hari",302);
+        emp[2]=new Developer("tamil",407);
+
+        for(int i=0;i<3;i++){
+            emp[i].calculateSalary();
+            ((Bonuseligible)emp[i]).applyBonus();
+        }
+    }
+}
