@@ -1,0 +1,17 @@
+public class palin{
+    public static void main(String args[]){
+        int str=121;
+        int rev=0;
+        int org=str;
+        while(str !=0){
+            int digit = str % 10;
+            rev = rev * 10 + digit;
+            str /= 10;
+        }
+        if(org==rev){
+            System.out.println("Palindrom");
+        }else{
+            System.out.println("Not Palindrom");
+        }
+    }
+}
