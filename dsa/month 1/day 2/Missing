@@ -1,0 +1,17 @@
+public class Missing{
+    public static void main(String args[]){
+        int[] arr={1, 2, 4, 5};
+        int total=0;
+        int missing=0;
+        int n=arr.length+1;
+        int sum=n+1;
+        sum=n*sum;
+        sum=sum/2;
+
+        for(int i=0;i<arr.length;i++){
+            total+=arr[i];
+        }
+        missing=sum-total;
+        System.out.println("Missing: "+missing);
+    }
+}
