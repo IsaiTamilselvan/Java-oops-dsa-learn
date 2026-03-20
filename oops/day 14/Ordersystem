@@ -1,0 +1,49 @@
+abstract class Order{
+    int orderid;
+    Order(int orderid){
+        this.orderid=orderid;
+    }
+
+    abstract void calculatePrice();
+}
+interface Discountable{
+    public void applyDiscount();
+}
+class Foodorder extends Order{
+    Foodorder(int orderid){
+        super(orderid);
+    }
+    @Override
+    void calculatePrice(){
+        System.out.println("Food price: price+gst");
+    }
+}
+class Electronicsorder extends Order implements Discountable{
+    Electronicsorder(int orderid){
+        super(orderid);
+    }
+    @Override
+    void calculatePrice(){
+        System.out.println("Product total price: price+gst+othertax");
+    }
+    @Override
+    public void applyDiscount(){
+        System.out.println("Discount: 20%_off");
+    }
+}
+public class Ordersystem{
+    public static void main(String args[]){
+        Order[] orders=new Order[3];
+
+        orders[0]=new Foodorder(232);
+        orders[1]=new Electronicsorder(344);
+        orders[2]=new Foodorder(233);
+
+        for(int i=0;i<3;i++){
+            orders[i].calculatePrice();
+            if(orders[i] instanceof Discountable){
+                ((Discountable)orders[i]).applyDiscount();
+            }
+        }
+    }
+}
