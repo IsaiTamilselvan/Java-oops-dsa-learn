@@ -1,0 +1,17 @@
+public class Dup{
+    public static void main(String args[]){
+        int[] arr ={1, 2, 3, 4, 5, 2};
+        int[] vist=new int[arr.length];
+        int dup=0;
+
+        for(int i=0;i<arr.length;i++){
+            for(int j=0;j<vist.length;j++){
+                if(arr[i]==vist[j]){
+                    dup=arr[i];
+                }
+            }
+            vist[i]=arr[i];
+        }
+        System.out.println("Duplicate: "+dup);
+    }
+}
