@@ -1,0 +1,22 @@
+public class Nonre{
+    public static void main(String args[]){
+        int[] arr={2, 3, 4, 2, 3, 5};
+
+        for(int i=0;i<arr.length;i++){
+            boolean uniq=true;
+
+            //------------------------------------
+            for(int j=0;j<arr.length;j++){      // check
+                if(i!=j && arr[i]==arr[j]){     // all ele
+                    uniq=false;                 // with i 
+                }                               //
+            }                                   //
+            //------------------------------------
+            //after fully check the arr print result
+            if(uniq){
+                System.out.println("First non-repeating: "+arr[i]);
+                return;
+            }
+        }
+    }
+}
