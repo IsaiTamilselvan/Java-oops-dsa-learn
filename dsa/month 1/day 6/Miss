@@ -1,0 +1,15 @@
+Missing with out formula
+public class Miss{
+    public static void main(String args[]){
+        int[] arr={1, 2, 4, 5};
+        int n=arr.length+1;
+        int index=0;
+
+        for(int i=1;i<=n;i++){
+            if(arr[index++]!=i){
+                System.out.println("missing: "+i);
+                return;
+            }
+        }
+    }
+}
