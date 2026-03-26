@@ -1,0 +1,19 @@
+public class smallest{
+    public static void main(String args[]){
+        int[] arr={8, 3, 5, 1, 9};
+        int fst=Integer.MAX_VALUE;
+        int sec=Integer.MAX_VALUE;
+
+        for(int i=0;i<arr.length;i++){
+            if(fst>arr[i]){
+                sec=fst;
+                fst=arr[i];
+            }
+            else if(arr[i]<sec && arr[i]!=fst){
+                sec=arr[i];
+            }
+        }
+        System.out.println("Second smallest: "+sec);
+
+    }
+}
