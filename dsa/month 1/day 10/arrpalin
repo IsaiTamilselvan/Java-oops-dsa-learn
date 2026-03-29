@@ -1,0 +1,25 @@
+public class arrpalin{
+    public static void main(String args[]){
+        int[] arr= {1, 2, 3, 3, 2, 1};
+
+        System.out.println("palindrom: "+ispalin(arr));
+    }
+    public static boolean ispalin(int[] arr){
+
+        boolean ispalin=false;
+
+        int left=0;
+        int right=arr.length-1;
+
+        while(left<right && left!=right){
+            if(arr[left]!=arr[right]){
+                return false;
+            }
+
+            left++;
+            right--;
+        }
+        return true;
+
+    }
+}
