@@ -1,0 +1,20 @@
+public static void main(String args[]){
+        int[] arr={16, 17, 4, 3, 5, 2};
+        int[] lead=new int[arr.length];
+
+        for(int i=0;i<arr.length;i++){
+            boolean cheaker=true;
+
+            for(int j=i;j<arr.length;j++){
+                if(arr[i]<arr[j]){
+                    cheaker=false;
+                }
+            }
+
+            if(!cheaker){
+                continue;
+            }
+
+            System.out.println(arr[i]);
+        }
+    }
