@@ -1,0 +1,31 @@
+public class sort0s1s{
+    public static void main(String arg[]){
+        int[] arr={2, 0, 2, 1, 1, 0, 0, 2};
+        int digit=0;
+        int pos=0;
+
+        for(int i=0;i<arr.length;i++){
+    
+            for(int j=i;j<arr.length;j++){
+            if(arr[j]==0){
+                int temp=arr[pos];
+                arr[pos]=arr[j];
+                arr[j]=temp;
+            }
+            }
+            pos++;
+            boolean isthr=false;
+            for(int j=i;j<arr.length;j++){
+                if(digit==arr[i]){
+                    isthr=true;
+                }
+            }
+            if(!isthr){
+                    digit++;
+                }
+        }
+        for(int i=0;i<arr.length;i++){
+            System.out.print(arr[i]+",");
+        }
+    }
+}
