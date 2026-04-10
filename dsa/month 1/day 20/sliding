@@ -1,0 +1,21 @@
+public class sliding{
+    public static void main(String args[]){
+        int[] arr={10,20,30};
+        int k=2;
+        int maxsum=0;
+        int sum=0;
+
+        for(int i=0;i<k;i++){
+            sum+=arr[i];
+            maxsum=sum;
+        }
+        for(int i=k;i<arr.length;i++){
+            sum=sum-arr[i-k]+arr[i];
+
+            if(maxsum<sum){
+                maxsum=sum;
+            }
+        }
+        System.out.println(maxsum);
+    }
+}
