@@ -1,0 +1,25 @@
+public class sliding {
+    public static void main(String args[]) {
+        int[] arr = {1,2,1,0,1,1,0};
+        int sum = 0;
+        int maxlen = 0;
+        int k = 3;
+        int left = 0;
+
+        for(int i = 0; i < arr.length; i++){
+            sum += arr[i];
+
+            while(sum > k){
+                sum = sum - arr[left];
+                left++;
+            }
+
+            int len = i - left + 1;
+            if(len > maxlen){
+                maxlen = len;
+            }
+        }
+
+        System.out.println(maxlen);
+    }
+}
