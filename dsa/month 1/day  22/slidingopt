@@ -1,0 +1,27 @@
+public class slidingopt{
+    public static void main(String args[]){
+        int[] arr = {1,2,1,1,1};
+        int k = 3;
+
+        int sum = 0;
+        int left = 0;
+        int max = 0;
+
+        for(int i = 0; i < arr.length; i++){
+            sum += arr[i];
+
+            while(sum > k){
+                sum -= arr[left];
+                left++;
+            }
+
+            if(sum == k){
+                int len = i - left + 1;
+                if(len > max){
+                    max = len;
+                }
+            }
+        }
+        System.out.println(max);
+    }
+}
