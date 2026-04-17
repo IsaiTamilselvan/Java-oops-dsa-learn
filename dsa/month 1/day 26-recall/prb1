@@ -1,0 +1,15 @@
+//prefix sum 1
+public class prb1{
+    public static void main(String args[]){
+        int[] arr={1, 2, 3, 4};
+        int sum=0;
+
+        int left=1;
+        int right=2;
+
+        for(int i=left;i<arr[right];i++){
+            sum+=arr[i];
+        }
+        System.out.println(sum);
+    }
+}
