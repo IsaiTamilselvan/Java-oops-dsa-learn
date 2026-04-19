@@ -1,0 +1,22 @@
+public class palindrome{
+    public static void main(String args[]){
+        String s = "madamji";
+        int left=0;
+        int right=s.length()-1;
+        boolean palindrome=true;
+
+        while(left<right){
+            if(s.charAt(left)!=s.charAt(right)){
+                palindrome=false;
+                break;
+            }
+            right--;
+            left++;
+        }
+        if(palindrome){
+            System.out.println("palindrome");
+        }else{
+            System.out.println("Not palindrome");
+        }
+    }
+}here also may var we used then how two pointer is better then rev+compare
