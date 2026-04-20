@@ -1,0 +1,14 @@
+//new concept for string dsa 
+//it might be look too tiny
+//but its realy new to me even i have cover many huge concepts
+//this make me surprise 
+//this is for understanding the string Char value
+public class Char{
+    public static void main(String args[]){
+        char s='a';
+        char d='b';
+        System.out.println('a');
+        System.out.println('z');
+        System.out.println('z'-'a');
+    }
+}
