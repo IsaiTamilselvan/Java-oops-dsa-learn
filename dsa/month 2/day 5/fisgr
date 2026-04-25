@@ -1,0 +1,30 @@
+//first value which is greater then target
+import java.math.*;
+public class fisgr{
+    public static void main(String args[]){
+        //int[] arr={2,4,6,8}; //case 1
+        int[] arr={1, 1, 1, 1};//case 2
+        int target=1;
+        int left=0;
+        int right=arr.length-1;
+
+        int result=Integer.MAX_VALUE;
+
+        while(left<=right){
+            int mid=(left+right)/2;
+
+            if(arr[mid]==target){
+                left=mid+1;
+            }else if(arr[mid]>target){
+                right=mid-1;
+                result=Math.min(result,mid);
+            }else{
+                left=mid+1;
+            }
+        }
+        if(result==Integer.MAX_VALUE){
+            result=arr.length;
+        }
+        System.out.println(result);
+    }
+} 
