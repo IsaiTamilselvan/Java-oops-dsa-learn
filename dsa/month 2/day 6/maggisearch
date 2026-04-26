@@ -1,0 +1,37 @@
+//find the elements which are satsfy the x*x <=n
+//it name it as maggi
+public class maggi{
+    public static void main(String args[]){
+        int n=20;
+        int x=1;
+
+        while(x*x<=n){
+            System.out.println(x);
+            x++;
+        }
+    }
+}//using the previous and implement binary search 
+import java.math.*;
+public class maggisearch{
+    public static void main(String args[]){
+        int n=30;
+        int left=1;
+        int right=n;
+        int res=Integer.MIN_VALUE;
+
+        while(left<=right){
+            int mid=(left+right)/2;
+
+            if(mid*mid <=n){
+                res=Math.max(res,mid);
+                left=mid+1;
+            }else if(mid*mid>=n){
+                right=mid-1;
+            }else{
+                res=Math.max(res,mid);
+                System.out.println(res);
+            }
+        }
+        System.out.println(res);
+    }
+}
