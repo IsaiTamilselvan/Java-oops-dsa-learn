@@ -1,0 +1,13 @@
+//find the elements which are satsfy the x*x <=n
+//it name it as maggi
+public class maggi{
+    public static void main(String args[]){
+        int n=20;
+        int x=1;
+
+        while(x*x<=n){
+            System.out.println(x);
+            x++;
+        }
+    }
+}
