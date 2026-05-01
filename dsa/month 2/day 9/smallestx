@@ -1,0 +1,22 @@
+public class smallestx{
+    public static void main(String args[]){
+        int target=15;
+
+        int left=0;
+        int right=target;
+
+        int smallestx=-1;
+
+        while(left<=right){
+            int mid=(left+right)/2;
+
+            if(mid*mid >= target){
+                smallestx=mid;
+                right=mid-1;
+            }else{
+                left=mid+1;
+            }
+        }
+        System.out.println(smallestx);
+    }
+}
