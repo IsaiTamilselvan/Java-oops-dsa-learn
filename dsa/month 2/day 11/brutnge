@@ -1,0 +1,21 @@
+// brute force next greater element 
+public class brutnge{
+    public static void main(String args[]){
+        int[] arr={6, 0, 8, 1, 3};
+        int n=arr.length;
+        int index=0;
+
+        int[] res=new int[n];
+        for(int i=0;i<n;i++){
+            for(int j=i;j<n;j++){
+                if(arr[i]<arr[j]){
+                    res[index++]=arr[j];
+                }
+            }
+        }
+        for(int i=0;i<n;i++){
+            System.out.println(res[i]);
+        }
+    }
+}
+//too slow and not complete solution!!
