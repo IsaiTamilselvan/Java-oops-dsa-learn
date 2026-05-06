@@ -1,0 +1,29 @@
+//revision smallest x which x*x >target
+
+import java.math.*;
+public class smallestx{
+    public static void main(String args[]){
+        int range=30;
+        int target=15;
+
+        int result=Integer.MAX_VALUE;
+
+        int left=1;
+        int right=range;
+
+        while(left<=right){
+            int mid=(left+right)/2;
+
+            if(mid*mid >= target){
+                result=Math.min(result,mid);
+                right=mid-1;
+            }
+            else if(mid*mid <= target){
+                left=mid+1;
+            }else{
+                right=mid-1;
+            }
+        }
+        System.out.println(result);
+    }
+}
