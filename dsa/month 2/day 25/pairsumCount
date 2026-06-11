@@ -1,0 +1,23 @@
+public class pairsumCount{
+    public static void main(String args[]){
+        int[] arr = {1,2,3,4,5,6};
+        int target = 7;
+        int count = 0;
+        int l=0;
+        int r=arr.length-1;
+
+        while(l<r){
+            if(arr[l]+arr[r] == target){
+                count++;
+                l++;
+                r--;
+            }else if(arr[l]+arr[r] >target){
+                r--;
+            }
+            else{
+                l++;
+            }
+        } 
+        System.out.println(count);
+    }
+}
