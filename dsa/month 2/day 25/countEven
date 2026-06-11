@@ -1,0 +1,21 @@
+public class countEven{
+    public static void main(String args[]){
+        int[] arr={1,2,3,4,5,6};
+        int left=0;
+        int right=arr.length-1;
+        int even=0;
+
+        while(left<right){
+            if(arr[left]%2==0){
+                even++;
+            }
+            if(arr[right]%2==0){
+                even++;
+            }
+
+            left++;
+            right--;
+        }
+        System.out.println(even);
+    }
+}
