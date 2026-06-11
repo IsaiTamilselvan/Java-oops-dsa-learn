@@ -1,0 +1,19 @@
+public class countUniq{
+    public static void main(String args[]){
+        int[] arr = {1,1,2,2,3,4,4,5};
+        int count=1;
+        int l=0;
+        int r=1;
+
+        while(l <arr.length && r <arr.length){
+            if(arr[l]==arr[r]){
+                r++;
+            }else{
+                count++;
+                l=r;
+                r++;
+            }
+        }
+        System.out.println(count);
+    }
+}
