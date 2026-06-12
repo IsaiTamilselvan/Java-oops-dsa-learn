@@ -1,0 +1,21 @@
+public class remDup{
+    public static void main(String args[]){
+        int[] arr = {1,1,2,2,3,4,4,5};
+        int index=1;
+
+        int l=0;
+        int r=1;
+        while(r<arr.length){
+            if(arr[l]==arr[r]){
+                r++;
+            }else{
+                arr[index++]=arr[r];
+                r++;
+                l++;
+            }
+        }
+        for(int i=0;i<index;i++){
+            System.out.println(arr[i]);
+        }
+    }
+}
