@@ -1,0 +1,20 @@
+public class evenLeft{
+    public static void main(String args[]){
+        int[] arr={2, 4, 6, 8, 1, 3, 5, 7};
+
+        System.out.println(isEvenleft(arr));
+    }
+    public static boolean isEvenleft(int[] arr){
+        int l=0;
+        int r=arr.length-1;
+
+        while(l<r){
+            if(arr[l]%2!=0 || arr[r]%2==0){
+                return false;
+            }
+            l++;
+            r--;
+        }
+        return true;
+    }
+}
