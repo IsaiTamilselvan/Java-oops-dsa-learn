@@ -1,0 +1,20 @@
+public class OddCount{
+    public static void main(String args[]){
+        int[] arr = {1,2,3,4,5,6,7,8};
+        int l=0;
+        int r=arr.length-1;
+        int oddcount=0;
+
+        while(l<r){
+            if(arr[l]%2!=0){
+                oddcount++;
+            }
+            if(arr[r]%2!=0){
+                oddcount++;
+            }
+            l++;
+            r--;
+        }
+        System.out.println(oddcount);
+    }
+}
