@@ -1,0 +1,21 @@
+public class oddLeft{
+    public static void main(String[] args){
+        int[] arr = {1,3,5,7,2,4,6};
+        System.out.println(isoLeft(arr));
+    }
+    public static boolean isoLeft(int[] arr){
+        int l=0;
+        int r=arr.length-1;
+
+        while(l<=r){
+            while(arr[r]%2==0 && r>l){
+                r--;
+            }
+            if(arr[l]%2==0){
+                return false;
+            }
+            l++;
+        }
+        return true;
+    }
+}
