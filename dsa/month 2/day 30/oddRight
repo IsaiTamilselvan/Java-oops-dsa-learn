@@ -1,0 +1,22 @@
+public class oddRight{
+    public static void main(String args[]){
+        int[] arr = {2,4,6,8,10,11};
+        System.out.println(isoright(arr));
+
+    }
+    public static boolean isoright(int[] arr){
+        int l=0;
+        int r=arr.length-1;
+
+        while(l<=r){
+            while(arr[l]%2==0 && l<arr.length){
+                l++;
+            }
+            if(arr[r]%2==0){
+                return false;
+            }
+            r--;
+        }
+        return true;
+    }
+}
