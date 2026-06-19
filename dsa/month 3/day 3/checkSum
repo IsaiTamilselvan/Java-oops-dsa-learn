@@ -1,0 +1,23 @@
+public class checkSum {
+    public static void main(String[] args) {
+        int[] arr = {1,2,3,4,5};
+        int k = 3;
+        int target = 9;
+
+        System.out.println("target sum found:"+checkSum(arr,k,target));
+    }
+    public static boolean checkSum(int[] arr,int k,int target){
+        int sum=0;
+        for(int i=0;i<k;i++){
+            sum+=arr[i];
+        }
+        if(sum==target) return true;
+
+        for (int i = k; i < arr.length; i++) {
+            sum-=arr[i-k];
+            sum+=arr[i];
+            if(sum==target) return true;
+        }
+        return false;
+    }
+}
