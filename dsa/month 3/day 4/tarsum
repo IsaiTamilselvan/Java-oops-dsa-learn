@@ -1,0 +1,21 @@
+public class tarSum {
+    public static void main(String[] args) {
+        int[] arr = {2,1,5,2,3,2};
+        int k = 3;
+        int target = 8;
+        System.out.println(maxSum(arr,k,target));
+    }
+    public static int maxSum(int[] arr,int k,int target) {
+        int sum=0;
+        for(int i=0;i<k;i++){
+            sum+=arr[i];
+            if(sum>target) return sum;
+        }
+        for (int i = k; i < arr.length; i++) {
+            sum-=arr[i-k];
+            sum+=arr[i];
+            if(sum>target) return sum;
+        }
+        return -1;
+    }
+}
