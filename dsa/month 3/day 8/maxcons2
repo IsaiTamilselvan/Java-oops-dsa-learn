@@ -1,0 +1,26 @@
+public class maxCons2 {
+    public static void main(String[] args) {
+        int[] arr = {1,1,0,1,1,0,1};
+        int k = 1;
+        int streak=0;
+        int maxstreak=Integer.MIN_VALUE;
+
+        int l=0;
+        int r=0;
+        while(r<arr.length){
+            if(arr[r]==0 && k==0){
+                maxstreak=Math.max(streak,maxstreak);
+                streak=0;
+                l=r;
+            }
+            if(arr[r]==1) streak++;
+
+            if(arr[r]==0 && k>0){
+                streak++;
+                k--;
+            }
+            r++;
+        }
+        System.out.print(maxstreak);
+    }
+}
