@@ -1,0 +1,17 @@
+public class maxCons{
+    public static void main(String[] args) {
+        int[] arr = {1,0,1,1,0,1,1,1};
+        int maxcons=Integer.MIN_VALUE;
+        int cons=0;
+
+        for (int i = 0; i < arr.length; i++) {
+            if(arr[i]==1){
+                cons++;
+                maxcons=Math.max(maxcons,cons);
+            }else{
+                cons=0;
+            }
+        }
+        System.out.println(maxcons);
+    }
+}
