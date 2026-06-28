@@ -6,8 +6,9 @@ public class mirror {
     }
     public static boolean isMirror(int[] arr){
         int l=0;int r=arr.length-1;
-        for (int i = 0; i < arr.length; i++) {
+        while (l<r) {
             if(arr[l]!=arr[r]) return false;
+            l++;r--;
         }
         return true;
     }
